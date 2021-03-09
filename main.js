@@ -13,8 +13,6 @@ function test() {
  return string;
 }
 
-
-
 /*
 ----------------------------------------
 CHALLENGE
@@ -31,11 +29,16 @@ results on the index page in the browser.
 */
 
 
-
-
-
-
-
+function sum(arr) {
+    if (arr.length === 0) {
+        return 0;
+    }
+    let sum= 0;
+    for (let i = 0; i < arr.length; i++) {
+       sum += arr[i];
+    }
+    return sum;
+}
 
 
 /*
@@ -48,14 +51,21 @@ Write function named doubleLetters that will take a string and double every lett
 Example: if you pass it "abc" then it should return "aabbcc"
 */
 
+function doubleLetters(text) {
 
+    if(text === "") {
+        return "";
+    }
 
+    let doubledString = "";
 
+    for (let i = 0; i < text.length; i++) {
+        doubledString += text[i];
+        doubledString += text[i];
+    }
 
-
-
-
-
+    return doubledString;
+}
 
 /*
 ----------------------------------------
@@ -68,12 +78,9 @@ Example: if you pass it [1,2,3] then it should return [2,4,6]
 */
 
 
-
-
-
-
-
-
+function doubleNumbers(arr) {
+    return arr.map((num) => num * 2);
+}
 
 /*
 ----------------------------------------
@@ -89,13 +96,9 @@ Examples:
 - if you call multiplyNumbers([1,2,3], 5) you'd get [5,10,15]
 */
 
-
-
-
-
-
-
-
+function multiplyNumbers(arr, factor) {
+    return arr.map((num) => num * factor);
+}
 
 
 /*

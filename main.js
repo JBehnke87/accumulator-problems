@@ -9,8 +9,8 @@ Solution: This one has already been completed for you.
 */
 
 function test() {
- var string ="This Works!";
- return string;
+    var string = "This Works!";
+    return string;
 }
 
 /*
@@ -30,16 +30,13 @@ results on the index page in the browser.
 
 
 function sum(arr) {
+
     if (arr.length === 0) {
         return 0;
     }
-    let sum= 0;
-    for (let i = 0; i < arr.length; i++) {
-       sum += arr[i];
-    }
-    return sum;
-}
 
+    return arr.reduce((acc, val, index, arr) => acc += val);
+}
 
 /*
 ----------------------------------------
@@ -53,18 +50,17 @@ Example: if you pass it "abc" then it should return "aabbcc"
 
 function doubleLetters(text) {
 
-    if(text === "") {
+    if (text === "") {
         return "";
     }
 
-    let doubledString = "";
+    let arr = text.split("");
 
-    for (let i = 0; i < text.length; i++) {
-        doubledString += text[i];
-        doubledString += text[i];
-    }
+    let doubledString = arr.reduce((acc, val) => {
+        val + val
+    }, "");
 
-    return doubledString;
+    console.log(doubledString);
 }
 
 /*
@@ -113,14 +109,11 @@ Example: if you pass it ["a", "b", "c"] and ["d", "e", "f"] then it should retur
 NOTE: you can assume each input will be the same length
 */
 
-
-
-
-
-
-
-
-
+function interleave(arr, arr2) {
+    if (arr.length == 0 || arr2.length == 0) {
+        return [];
+    }
+}
 
 
 /*

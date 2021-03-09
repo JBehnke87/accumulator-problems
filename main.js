@@ -56,11 +56,11 @@ function doubleLetters(text) {
 
     let arr = text.split("");
 
-    let doubledString = arr.reduce((acc, val) => {
-        val + val
-    }, "");
+    let doubledString = arr.reduce((acc, val) => acc += val + val);
 
     console.log(doubledString);
+
+    return doubledString;
 }
 
 /*
@@ -109,12 +109,23 @@ Example: if you pass it ["a", "b", "c"] and ["d", "e", "f"] then it should retur
 NOTE: you can assume each input will be the same length
 */
 
-function interleave(arr, arr2) {
+/* function interleave(arr, arr2) {
     if (arr.length == 0 || arr2.length == 0) {
         return [];
     }
+
+    return arr.reduce((acc, val, i) => acc += val + arr2[i]);
 }
 
+*/
+
+const interleave = (a,b) => {
+
+    return a.reduce((acc,curr,index) => {
+       acc.push(curr, b[index]);
+       return acc;
+    },[]);
+   }
 
 /*
 ----------------------------------------
@@ -126,12 +137,10 @@ Write function named createRange that will take a number and a default value and
 Example: if you pass it 4 and "Hello" then it should return ["Hello", "Hello", "Hello", "Hello"]
 */
 
-
-
-
-
-
-
+const createRange = (num,val) => {
+    let arr = new Array(num);
+    return arr.fill(val);
+}
 
 /*
 ----------------------------------------
@@ -145,12 +154,13 @@ Example:
 If you pass it ["quick", "brown", "fox"] then it should return { "quick": 0, "brown": 1, "fox": 2 }
 */
 
-
-
-
-
-
-
+const flipArray = (incoming) => {
+    obj = {};
+    incoming.forEach((val, i) => {
+        obj[val] = i;        
+    });
+    return obj;
+}
 
 /*
 ----------------------------------------
